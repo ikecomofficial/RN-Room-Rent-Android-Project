@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">RN Room Rent</string>
+    <string name="title_properties">Properties</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_account_setting">Account Setting</string>
+    <string name="default_web_client_id">320401850940-r3kh5hc5ditebmjs6mdddk2e8pc018cb</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="login_screen_heading">"Get Started"</string>
+    <string name="login_screen_subheading">"Please Sign In to continue"</string>
+    <string name="sign_in_with_google">"Sign in with Google"</string>
+    <string name="text_name_label">"Name"</string>
+    <string name="text_email_label">"E-mail"</string>
+    <string name="text_logout">"logout"</string>
+    <string name="text_app_version">"v1.0.0"</string>
+    <string name="text_display_name">"rahul Raj"</string>
+    <string name="text_display_email">"rahulraj@gmail.com"</string>
+    <string name="text_plus_add_property">+ Add Property</string>
+    <string name="text_add_property">Add Property</string>
+    <string name="text_property_name">Property Name</string>
+    <string name="text_enter_name">Enter Name</string>
+    <string name="text_total_rooms">Total Rooms</string>
+    <string name="text_address_city">Address/City</string>
+    <string name="text_property_location">Property Location</string>
+    <string name="text_0">0</string>
+    <string name="text_total_shops">Total Shops</string>
+    <string name="text_create_property">Create Property</string>
+
+</resources>

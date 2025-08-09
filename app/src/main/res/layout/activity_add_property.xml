@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddProperty">
+
+
+    <!-- The CardView from the previous design is now a child of the ConstraintLayout. -->
+    <!-- Constraints are added to center the CardView horizontally and vertically. -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        android:id="@+id/cardPropertyName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <!-- A LinearLayout is used to stack the heading and the input field vertically. -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="@color/purple_100">
+
+            <!-- This TextView serves as the text heading. -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_property_name"
+                android:textColor="#334155"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- This EditText is the text input field. -->
+            <EditText
+                android:id="@+id/editTextPropertyName"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_edittext_rounded"
+                android:hint="@string/text_enter_name"
+                android:padding="12dp"
+                android:textSize="16sp"
+                android:textColor="#0F172A"
+                android:textColorHint="#94A3B8"
+                android:inputType="textCapWords" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- The CardView from the previous design is now a child of the ConstraintLayout. -->
+    <!-- Constraints are added to center the CardView horizontally and vertically. -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        android:id="@+id/cardAddressCity"
+        app:layout_constraintTop_toBottomOf="@+id/cardPropertyName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- A LinearLayout is used to stack the heading and the input field vertically. -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="@color/purple_100">
+
+            <!-- This TextView serves as the text heading. -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_address_city"
+                android:textColor="#334155"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- This EditText is the text input field. -->
+            <EditText
+                android:id="@+id/editTextPropertyAddress"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_edittext_rounded"
+                android:hint="@string/text_property_location"
+                android:padding="12dp"
+                android:textSize="16sp"
+                android:textColor="#0F172A"
+                android:textColorHint="#94A3B8"
+                android:inputType="textCapWords" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- The CardView is a child of the ConstraintLayout, giving it rounded corners and a shadow. -->
+    <!-- Constraints are added here to position the CardView within the parent. -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        android:id="@+id/cardTotalRooms"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardAddressCity">
+
+        <!-- The inner ConstraintLayout positions the TextView and LinearLayout side-by-side. -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingRight="16dp"
+            android:paddingLeft="16dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:background="@color/purple_100">
+
+            <!-- This TextView displays the label "Total Rooms". -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_total_rooms"
+                android:textColor="#0F172A"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- This LinearLayout groups the minus button, the number, and the plus button. -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <!-- This ImageView represents the minus button. You would need to add your own icon for this. -->
+                <ImageView
+                    android:id="@+id/imgRoomsMinus"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:background="@drawable/bg_edittext_rounded"
+                    android:contentDescription="Minus"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_input_minus" />
+
+                <!-- This TextView displays the current number of rooms. -->
+                <TextView
+                    android:id="@+id/textTotalRooms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="@string/text_0"
+                    android:textStyle="bold"
+                    android:textColor="#0F172A"
+                    android:textSize="18sp" />
+
+                <!-- This ImageView represents the plus button. You would need to add your own icon for this. -->
+                <ImageView
+                    android:id="@+id/imgRoomsPlus"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:background="@drawable/bg_edittext_rounded"
+                    android:contentDescription="Plus"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_input_plus" />
+
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- The CardView is a child of the ConstraintLayout, giving it rounded corners and a shadow. -->
+    <!-- Constraints are added here to position the CardView within the parent. -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        android:id="@+id/cardTotalShops"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardTotalRooms">
+
+        <!-- The inner ConstraintLayout positions the TextView and LinearLayout side-by-side. -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingRight="16dp"
+            android:paddingLeft="16dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:background="@color/purple_100">
+
+            <!-- This TextView displays the label "Total Rooms". -->
+            <TextView
+                android:id="@+id/textViewLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_total_shops"
+                android:textColor="#0F172A"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- This LinearLayout groups the minus button, the number, and the plus button. -->
+            <LinearLayout
+                android:id="@+id/layoutCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <!-- This ImageView represents the minus button. You would need to add your own icon for this. -->
+                <ImageView
+                    android:id="@+id/imgShopsMinus"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:background="@drawable/bg_edittext_rounded"
+                    android:contentDescription="Minus"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_input_minus" />
+
+                <!-- This TextView displays the current number of rooms. -->
+                <TextView
+                    android:id="@+id/textTotalShops"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="@string/text_0"
+                    android:textColor="#0F172A"
+                    android:textStyle="bold"
+                    android:textSize="18sp" />
+
+                <!-- This ImageView represents the plus button. You would need to add your own icon for this. -->
+                <ImageView
+                    android:id="@+id/buttonPlus"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:background="@drawable/bg_edittext_rounded"
+                    android:contentDescription="Plus"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_input_plus" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="10dp"
+        android:text="@string/text_create_property"
+        android:textSize="16sp"
+        android:id="@+id/btnCreateProperty"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardTotalShops"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

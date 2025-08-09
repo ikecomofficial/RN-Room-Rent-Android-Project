@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "320401850940",
+    "firebase_url": "https://rn-room-rent-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "rn-room-rent",
+    "storage_bucket": "rn-room-rent.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:320401850940:android:72361406d1fd02803f7939",
+        "android_client_info": {
+          "package_name": "com.example.rnroomrent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "320401850940-i0t4okc6jku7takdpmf73b5ak1i54gbu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rnroomrent",
+            "certificate_hash": "8842071efbc4e2f3f7fdbcf2070ac1d3c3452832"
+          }
+        },
+        {
+          "client_id": "320401850940-r3kh5hc5ditebmjs6mdddk2e8pc018cb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCy49ahlKeh6pYhLUZ6KiJJludFBf2Tskc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "320401850940-r3kh5hc5ditebmjs6mdddk2e8pc018cb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
