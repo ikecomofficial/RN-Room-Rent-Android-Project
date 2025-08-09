@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_edittext_rounded"
+    android:layout_margin="6dp">
+
+    <!-- ImageView on the left -->
+    <ImageView
+        android:id="@+id/image_property"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop"
+        android:layout_margin="12dp"
+        android:src="@drawable/ic_properties_list_card" />
+
+    <!-- Vertical LinearLayout with texts on the right -->
+    <LinearLayout
+        android:id="@+id/text_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/image_property"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="12dp"
+        android:orientation="vertical"
+        android:layout_centerVertical="true">
+
+        <TextView
+            android:id="@+id/tvPropertyName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Greenview Apartments"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/tvPropertyAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="123 Oak Avenue, Springfield, IL"
+            android:textSize="16sp"
+            android:textColor="#666666" />
+
+        <LinearLayout
+            android:id="@+id/rooms_shops_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="6dp"
+            android:paddingStart="1dp">
+
+            <TextView
+                android:id="@+id/text_rooms_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rooms"
+                android:textSize="14sp"
+                android:textColor="#333333" />
+
+            <TextView
+                android:id="@+id/text_colon1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textSize="14sp"
+                android:textColor="#333333"
+                android:paddingStart="2dp"
+                android:paddingEnd="4dp" />
+
+            <TextView
+                android:id="@+id/tvOccupiedRooms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:textColor="#333333" />
+
+            <TextView
+                android:id="@+id/text_slash1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:paddingStart="1dp"
+                android:paddingEnd="1dp" />
+
+            <TextView
+                android:id="@+id/tvTotalRooms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="8"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:textColor="#333333" />
+
+            <!-- Space between Rooms and Shops and the dot -->
+            <TextView
+                android:id="@+id/text_dot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" \u2022 "
+                android:textSize="14sp"
+                android:textColor="#333333" />
+
+            <TextView
+                android:id="@+id/text_shops_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shops"
+                android:textSize="14sp"
+                android:textColor="#333333" />
+
+            <TextView
+                android:id="@+id/text_colon2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textSize="14sp"
+                android:textColor="#333333"
+                android:paddingStart="2dp"
+                android:paddingEnd="4dp" />
+
+            <TextView
+                android:id="@+id/tvOccupiedShops"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:textColor="#333333" />
+
+            <TextView
+                android:id="@+id/text_slash2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:paddingStart="1dp"
+                android:paddingEnd="1dp" />
+
+            <TextView
+                android:id="@+id/tvTotalShops"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:textColor="#333333" />
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>
