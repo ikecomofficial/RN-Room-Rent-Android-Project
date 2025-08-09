@@ -34,7 +34,6 @@ public class AddProperty extends AppCompatActivity {
     private TextView textTotalRooms, textTotalShops;
     private int currTotalRooms = 0;
     private int currTotalShops = 0;
-    private int roomsSortOrder = 1;
 
     private FirebaseAuth mAuth;
     private String userId;

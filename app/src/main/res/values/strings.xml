@@ -32,5 +32,6 @@
     <string name="text_0">0</string>
     <string name="text_total_shops">Total Shops</string>
     <string name="text_create_property">Create Property</string>
+    <string name="text_your_properties">Your Properties</string>
 
 </resources>
