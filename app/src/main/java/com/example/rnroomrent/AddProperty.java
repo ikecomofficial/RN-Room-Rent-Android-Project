@@ -30,7 +30,7 @@ import java.util.Objects;
 
 public class AddProperty extends AppCompatActivity {
 
-    private EditText etPropertyName, etPropertyAddress;
+    private EditText etPropertyName, etPropertyAddress, etDefaultRentAmount;
     private TextView textTotalRooms, textTotalShops;
     private int currTotalRooms = 0;
     private int currTotalShops = 0;
@@ -62,6 +62,7 @@ public class AddProperty extends AppCompatActivity {
 
         etPropertyName = findViewById(R.id.editTextPropertyName);
         etPropertyAddress = findViewById(R.id.editTextPropertyAddress);
+        etDefaultRentAmount = findViewById(R.id.editTextDefaultRent);
         ImageView imgRoomsMinus = findViewById(R.id.imgRoomsMinus);
         textTotalRooms = findViewById(R.id.textTotalRooms);
         ImageView imgRoomsPlus = findViewById(R.id.imgRoomsPlus);
@@ -125,6 +126,7 @@ public class AddProperty extends AppCompatActivity {
 
         String propertyName = etPropertyName.getText().toString().trim();
         String propertyAddress = etPropertyAddress.getText().toString().trim();
+        String propertyDefaultRent = etDefaultRentAmount.getText().toString().trim();
 
         currTimestamp = String.valueOf(System.currentTimeMillis());
 
@@ -136,6 +138,10 @@ public class AddProperty extends AppCompatActivity {
             etPropertyAddress.setError("Enter city/address");
             return;
         }
+        if (propertyDefaultRent.isEmpty()) {
+            etDefaultRentAmount.setError("Enter Rent Amount");
+            return;
+        }
 
         // Create unique property ID
         pid = propertyReference.push().getKey();
@@ -143,6 +149,7 @@ public class AddProperty extends AppCompatActivity {
         HashMap<String, String> propertyMap = new HashMap<>();
         propertyMap.put("property_name", propertyName);
         propertyMap.put("property_address", propertyAddress);
+        propertyMap.put("property_default_rent", propertyDefaultRent);
         propertyMap.put("user_id", userId);
         propertyMap.put("total_rooms", String.valueOf(currTotalRooms));
         propertyMap.put("total_shops", String.valueOf(currTotalShops));
@@ -164,12 +171,19 @@ public class AddProperty extends AppCompatActivity {
     private void createRoomsShopsInFirebase(){
         roomsReference = FirebaseDatabase.getInstance().getReference().child("rooms");
 
+        String propertyDefaultRent = etDefaultRentAmount.getText().toString().trim();
+        if (propertyDefaultRent.isEmpty()) {
+            etDefaultRentAmount.setError("Enter Rent Amount");
+            return;
+        }
+
         for (int i = 1; i<= currTotalRooms; i++){
             String room_id = roomsReference.push().getKey();
             if (room_id != null){
                 HashMap<String, String> roomsMap = new HashMap<>();
                 roomsMap.put("room_no", String.valueOf(i));
                 roomsMap.put("roomName", String.format(Locale.US, "Room %02d", i));
+                roomsMap.put("room_rent", etDefaultRentAmount.getText().toString().trim());
                 roomsMap.put("user_id", userId);
                 roomsMap.put("property_id", pid);
                 roomsMap.put("is_room", String.valueOf(true));
@@ -178,11 +192,9 @@ public class AddProperty extends AppCompatActivity {
 
                 roomsReference.child(room_id).setValue(roomsMap)
                         .addOnSuccessListener(aVoid -> {
-                            Toast.makeText(this, "Rooms Added", Toast.LENGTH_SHORT).show();
                             finish();
-                        })
-                        .addOnFailureListener(e ->
-                                Toast.makeText(this, "Rooms Failed: " + e.getMessage(), Toast.LENGTH_SHORT).show());
+                        });
+
             }
         }
         for (int i = 1; i<= currTotalShops; i++){
@@ -191,6 +203,7 @@ public class AddProperty extends AppCompatActivity {
                 HashMap<String, String> roomsMap = new HashMap<>();
                 roomsMap.put("room_no", String.valueOf(currTotalRooms + i));
                 roomsMap.put("roomName", String.format(Locale.US, "Shop %02d", i));
+                roomsMap.put("shop_rent", etDefaultRentAmount.getText().toString().trim());
                 roomsMap.put("user_id", userId);
                 roomsMap.put("property_id", pid);
                 roomsMap.put("is_room", String.valueOf(false));
@@ -199,11 +212,8 @@ public class AddProperty extends AppCompatActivity {
 
                 roomsReference.child(room_id).setValue(roomsMap)
                         .addOnSuccessListener(aVoid -> {
-                            Toast.makeText(this, "Rooms Added", Toast.LENGTH_SHORT).show();
                             finish();
-                        })
-                        .addOnFailureListener(e ->
-                                Toast.makeText(this, "Rooms Failed: " + e.getMessage(), Toast.LENGTH_SHORT).show());
+                        });
             }
         }
 

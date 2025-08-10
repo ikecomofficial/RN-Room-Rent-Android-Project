@@ -25,13 +25,16 @@
     <string name="text_plus_add_property">+ Add Property</string>
     <string name="text_add_property">Add Property</string>
     <string name="text_property_name">Property Name</string>
-    <string name="text_enter_name">Enter Name</string>
+    <string name="text_enter_name">Property Name</string>
     <string name="text_total_rooms">Total Rooms</string>
     <string name="text_address_city">Address/City</string>
+    <string name="text_default_rent">Default Rent Amount</string>
+    <string name="text_rent_amount">Enter Rent Amount</string>
     <string name="text_property_location">Property Location</string>
     <string name="text_0">0</string>
     <string name="text_total_shops">Total Shops</string>
     <string name="text_create_property">Create Property</string>
     <string name="text_your_properties">Your Properties</string>
+    <string name="text_list_all_property">List of All Your Properties</string>
 
 </resources>

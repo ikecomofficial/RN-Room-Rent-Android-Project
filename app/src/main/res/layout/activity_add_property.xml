@@ -14,28 +14,27 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        app:cardCornerRadius="8dp"
+        app:cardCornerRadius="12dp"
         app:cardElevation="8dp"
         android:id="@+id/cardPropertyName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <!-- A LinearLayout is used to stack the heading and the input field vertically. -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp"
-            android:background="@color/purple_100">
+            android:background="@drawable/bg_edit_text_layout"
+            android:padding="16dp">
 
             <!-- This TextView serves as the text heading. -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/text_property_name"
-                android:textColor="#334155"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:layout_marginBottom="8dp"/>
@@ -63,7 +62,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        app:cardCornerRadius="8dp"
+        app:cardCornerRadius="12dp"
         app:cardElevation="8dp"
         android:id="@+id/cardAddressCity"
         app:layout_constraintTop_toBottomOf="@+id/cardPropertyName"
@@ -76,14 +75,14 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="16dp"
-            android:background="@color/purple_100">
+            android:background="@drawable/bg_edit_text_layout">
 
             <!-- This TextView serves as the text heading. -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/text_address_city"
-                android:textColor="#334155"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:layout_marginBottom="8dp"/>
@@ -111,7 +110,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        app:cardCornerRadius="8dp"
+        app:cardCornerRadius="12dp"
         app:cardElevation="4dp"
         android:id="@+id/cardTotalRooms"
         app:layout_constraintEnd_toEndOf="parent"
@@ -126,14 +125,14 @@
             android:paddingLeft="16dp"
             android:paddingBottom="10dp"
             android:paddingTop="10dp"
-            android:background="@color/purple_100">
+            android:background="@drawable/bg_edit_text_layout">
 
             <!-- This TextView displays the label "Total Rooms". -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/text_total_rooms"
-                android:textColor="#0F172A"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -155,9 +154,10 @@
                     android:id="@+id/imgRoomsMinus"
                     android:layout_width="38dp"
                     android:layout_height="38dp"
-                    android:background="@drawable/bg_edittext_rounded"
+                    android:background="@drawable/bg_edit_text_layout"
                     android:contentDescription="Minus"
                     android:padding="8dp"
+                    app:tint="@color/black"
                     android:src="@drawable/ic_input_minus" />
 
                 <!-- This TextView displays the current number of rooms. -->
@@ -169,7 +169,7 @@
                     android:layout_marginEnd="16dp"
                     android:text="@string/text_0"
                     android:textStyle="bold"
-                    android:textColor="#0F172A"
+                    android:textColor="@color/black"
                     android:textSize="18sp" />
 
                 <!-- This ImageView represents the plus button. You would need to add your own icon for this. -->
@@ -177,9 +177,10 @@
                     android:id="@+id/imgRoomsPlus"
                     android:layout_width="38dp"
                     android:layout_height="38dp"
-                    android:background="@drawable/bg_edittext_rounded"
+                    android:background="@drawable/bg_edit_text_layout"
                     android:contentDescription="Plus"
                     android:padding="8dp"
+                    app:tint="@color/black"
                     android:src="@drawable/ic_input_plus" />
 
 
@@ -195,7 +196,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        app:cardCornerRadius="8dp"
+        app:cardCornerRadius="12dp"
         app:cardElevation="4dp"
         android:id="@+id/cardTotalShops"
         app:layout_constraintEnd_toEndOf="parent"
@@ -210,7 +211,7 @@
             android:paddingLeft="16dp"
             android:paddingBottom="10dp"
             android:paddingTop="10dp"
-            android:background="@color/purple_100">
+            android:background="@drawable/bg_edit_text_layout">
 
             <!-- This TextView displays the label "Total Rooms". -->
             <TextView
@@ -218,7 +219,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/text_total_shops"
-                android:textColor="#0F172A"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -241,9 +242,10 @@
                     android:id="@+id/imgShopsMinus"
                     android:layout_width="38dp"
                     android:layout_height="38dp"
-                    android:background="@drawable/bg_edittext_rounded"
+                    android:background="@drawable/bg_edit_text_layout"
                     android:contentDescription="Minus"
                     android:padding="8dp"
+                    app:tint="@color/black"
                     android:src="@drawable/ic_input_minus" />
 
                 <!-- This TextView displays the current number of rooms. -->
@@ -254,7 +256,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="16dp"
                     android:text="@string/text_0"
-                    android:textColor="#0F172A"
+                    android:textColor="@color/black"
                     android:textStyle="bold"
                     android:textSize="18sp" />
 
@@ -263,9 +265,10 @@
                     android:id="@+id/buttonPlus"
                     android:layout_width="38dp"
                     android:layout_height="38dp"
-                    android:background="@drawable/bg_edittext_rounded"
+                    android:background="@drawable/bg_edit_text_layout"
                     android:contentDescription="Plus"
                     android:padding="8dp"
+                    app:tint="@color/black"
                     android:src="@drawable/ic_input_plus" />
 
             </LinearLayout>
@@ -274,16 +277,66 @@
 
     </androidx.cardview.widget.CardView>
 
+    <!-- The CardView from the previous design is now a child of the ConstraintLayout. -->
+    <!-- Constraints are added to center the CardView horizontally and vertically. -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="8dp"
+        android:id="@+id/cardDefaultRent"
+        app:layout_constraintTop_toBottomOf="@+id/cardTotalShops"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- A LinearLayout is used to stack the heading and the input field vertically. -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="@drawable/bg_edit_text_layout">
+
+            <!-- This TextView serves as the text heading. -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_default_rent"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- This EditText is the text input field. -->
+            <EditText
+                android:id="@+id/editTextDefaultRent"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_edittext_rounded"
+                android:hint="@string/text_rent_amount"
+                android:padding="12dp"
+                android:textSize="16sp"
+                android:textColor="#0F172A"
+                android:textColorHint="#94A3B8"
+                android:inputType="textCapWords" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
     <Button
+        android:id="@+id/btnCreateProperty"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_margin="10dp"
         android:text="@string/text_create_property"
         android:textSize="16sp"
-        android:id="@+id/btnCreateProperty"
+        android:backgroundTint="@color/purple_700"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cardTotalShops"
+        app:layout_constraintTop_toBottomOf="@id/cardDefaultRent"
         app:layout_constraintStart_toStartOf="parent"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

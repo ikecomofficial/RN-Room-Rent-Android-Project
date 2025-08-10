@@ -6,59 +6,83 @@
     android:layout_height="match_parent"
     tools:context=".ui.properties.PropertiesFragment">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnAddProperty"
+    <!-- Header Container -->
+    <LinearLayout
+        android:id="@+id/headerContainer"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/text_plus_add_property"
-        android:textColor="@color/purple_700"
-        android:textSize="16sp"
-        android:backgroundTint="@android:color/white"
-        android:paddingVertical="18dp"
-        android:paddingHorizontal="24dp"
-        app:cornerRadius="8dp"
-        app:strokeColor="@color/purple_700"
-        app:strokeWidth="2dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_margin="10dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Text Section -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_properties"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/subtitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_list_all_property"
+                android:textSize="14sp"
+                android:layout_marginTop="6dp"
+                android:textColor="@android:color/darker_gray"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/headerContainer"/>
+
+        </LinearLayout>
+
+        <!-- Button -->
+        <Button
+            android:id="@+id/btnAddProperty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_plus_add_property"
+            android:textAllCaps="false"
+            android:textSize="14sp"
+            android:textColor="@android:color/white"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/rounded_btn" />
+    </LinearLayout>
+
 
     <View
         android:id="@+id/viewSeparatorLine"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="0.2dp"
         android:background="@color/acc_setting_labels"
         android:layout_margin="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAddProperty"/>
-
-    <TextView
-        android:id="@+id/textYourProperty"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/text_your_properties"
-        android:textSize="20sp"
-        android:layout_marginStart="10dp"
-        android:textStyle="bold"
-        android:layout_marginTop="10dp"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewSeparatorLine"/>
+        app:layout_constraintTop_toBottomOf="@+id/headerContainer"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/propertyListRecycleView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="12dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/viewSeparatorLine"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textYourProperty"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

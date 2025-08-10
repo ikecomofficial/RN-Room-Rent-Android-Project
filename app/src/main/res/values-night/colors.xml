@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="acc_setting_labels">#BDBDBD</color>
+    <color name="acc_setting_labels">#7C7C7C</color>
+    <color name="black_900">#bcbcbc</color>
+    <color name="black">#FFFFFF</color>
+    <color name="purple_700">#1b6a68</color>
+    <color name="purple_200">#8db4b3</color>
+    <color name="purple_100">#1D1D20</color>
+    <color name="bg_white">#111416</color>
+    <color name="light_gray_bg">#222529</color>
 </resources>
