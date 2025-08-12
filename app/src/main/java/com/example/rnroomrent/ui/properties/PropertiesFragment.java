@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +22,7 @@ import com.example.rnroomrent.AddProperty;
 import com.example.rnroomrent.LoginScreenActivity;
 import com.example.rnroomrent.MainActivity;
 import com.example.rnroomrent.Properties;
+import com.example.rnroomrent.PropertyDetailsActivity;
 import com.example.rnroomrent.R;
 import com.example.rnroomrent.databinding.FragmentPropertiesBinding;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -35,7 +37,6 @@ public class PropertiesFragment extends Fragment {
 
     private RecyclerView propertyList;
     private DatabaseReference propertiesReference;
-
     private FragmentPropertiesBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -92,6 +93,18 @@ public class PropertiesFragment extends Fragment {
                         holder.setOccupiedShops(model.getShops_occupied());
                         holder.setTotalShops(model.getTotal_shops());
                         // etc.
+
+                        // Send pid to PropertyDetails Activity
+                        String property_id = getRef(position).getKey();
+
+                        holder.mView.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent propertyDetailIntent = new Intent(requireContext(), PropertyDetailsActivity.class);
+                                propertyDetailIntent.putExtra("property_id", property_id);
+                                startActivity(propertyDetailIntent);
+                            }
+                        });
                     }
 
                     @NonNull

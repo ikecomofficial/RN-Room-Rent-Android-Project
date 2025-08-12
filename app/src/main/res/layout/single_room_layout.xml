@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    android:elevation="5dp"
+    android:background="@drawable/gpt_bg_property_card">
+
+    <!-- Property Card -->
+    <LinearLayout
+        android:id="@+id/roomsCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="12dp"
+        android:layout_marginVertical="4dp"
+        tools:ignore="UselessParent">
+
+        <!-- Top Row: Room 01 + Status + Rent Amount -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingEnd="8dp"
+            android:paddingStart="0dp">
+
+            <TextView
+                android:id="@+id/tvRoomName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_room_01"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/grey_500" />
+            <TextView
+                android:id="@+id/tvRupeeSymbol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_rupee_symbol"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="3dp"
+                android:layout_toStartOf="@id/tvRoomRent"
+                android:textColor="@color/black" />
+
+
+            <TextView
+                android:id="@+id/tvRoomRent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_rent_2500"
+                android:textSize="22sp"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                tools:ignore="RelativeOverlap" />
+
+        </RelativeLayout>
+
+        <!-- Image + Tenant + Phone + Rent Status -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingEnd="8dp"
+            android:paddingStart="8dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="5dp">
+
+                <!-- Avatar -->
+                <ImageView
+                    android:id="@+id/imgTenantProfile"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_google_logo"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="Tenant Profile Image"/>
+
+                <!-- Name -->
+                <TextView
+                    android:id="@+id/tvTenantName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_tenant_name"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:layout_toEndOf="@id/imgTenantProfile"
+                    android:layout_marginStart="16dp"
+                    android:textColor="@color/black" />
+
+                <!-- Subtitle -->
+
+            <!-- Status -->
+            <TextView
+                android:id="@+id/tvTenantPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvTenantName"
+                android:layout_alignStart="@id/tvTenantName"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="1dp"
+                android:text="@string/text_tenant_phone"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                    android:id="@+id/tvRentStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_status_paid"
+                    android:textSize="14sp"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="#4CAF50"
+                    android:background="@drawable/gpt_bg_status_pill"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="4dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    tools:ignore="RelativeOverlap" />
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/viewSeparatorLine"
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:background="@color/purple_700"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/headerContainer"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="8dp">
+
+            <!-- First: Bill Name -->
+            <TextView
+                android:id="@+id/tvBillName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_electricity_bill"
+                android:textSize="16sp"
+                android:textColor="@color/grey_700"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true" />
+
+            <!-- Center: Units + "units" together -->
+            <LinearLayout
+                android:id="@+id/centerGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:id="@+id/tvUnitPaid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="40"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/tvUnitLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" units"
+                    android:textSize="16sp"
+                    android:textColor="@color/grey_700" />
+            </LinearLayout>
+            <!-- Third: Status -->
+            <TextView
+                android:id="@+id/tvEBillStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Paid"
+                android:textSize="14sp"
+                android:backgroundTint="#4CAF50"
+                android:textColor="#FFFFFF"
+                android:gravity="center"
+                android:background="@drawable/gpt_bg_status_pill"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true" />
+
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</RelativeLayout>

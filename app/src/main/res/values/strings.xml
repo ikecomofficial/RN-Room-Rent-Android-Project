@@ -36,5 +36,13 @@
     <string name="text_create_property">Create Property</string>
     <string name="text_your_properties">Your Properties</string>
     <string name="text_list_all_property">List of All Your Properties</string>
+    <string name="text_property_details">Property Details</string>
+    <string name="text_room_01">Room 01</string>
+    <string name="text_rent_2500">2500</string>
+    <string name="text_rupee_symbol">₹</string>
+    <string name="text_tenant_name">Tenant Name</string>
+    <string name="text_tenant_phone">+91 9149880950</string>
+    <string name="text_status_paid">Paid</string>
+    <string name="text_electricity_bill">Electricity Bill</string>
 
 </resources>

@@ -142,6 +142,10 @@ public class AddProperty extends AppCompatActivity {
             etDefaultRentAmount.setError("Enter Rent Amount");
             return;
         }
+        if (currTotalRooms == 0 && currTotalShops == 0){
+            Toast.makeText(AddProperty.this, "Please Add Rooms or Shops", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         // Create unique property ID
         pid = propertyReference.push().getKey();
@@ -171,19 +175,14 @@ public class AddProperty extends AppCompatActivity {
     private void createRoomsShopsInFirebase(){
         roomsReference = FirebaseDatabase.getInstance().getReference().child("rooms");
 
-        String propertyDefaultRent = etDefaultRentAmount.getText().toString().trim();
-        if (propertyDefaultRent.isEmpty()) {
-            etDefaultRentAmount.setError("Enter Rent Amount");
-            return;
-        }
-
         for (int i = 1; i<= currTotalRooms; i++){
             String room_id = roomsReference.push().getKey();
             if (room_id != null){
                 HashMap<String, String> roomsMap = new HashMap<>();
                 roomsMap.put("room_no", String.valueOf(i));
-                roomsMap.put("roomName", String.format(Locale.US, "Room %02d", i));
-                roomsMap.put("room_rent", etDefaultRentAmount.getText().toString().trim());
+                roomsMap.put("room_name", String.format(Locale.US, "Room %02d", i));
+                roomsMap.put("default_rent", etDefaultRentAmount.getText().toString().trim());
+                roomsMap.put("custom_rent", etDefaultRentAmount.getText().toString().trim());
                 roomsMap.put("user_id", userId);
                 roomsMap.put("property_id", pid);
                 roomsMap.put("is_room", String.valueOf(true));
@@ -202,8 +201,9 @@ public class AddProperty extends AppCompatActivity {
             if (room_id != null){
                 HashMap<String, String> roomsMap = new HashMap<>();
                 roomsMap.put("room_no", String.valueOf(currTotalRooms + i));
-                roomsMap.put("roomName", String.format(Locale.US, "Shop %02d", i));
-                roomsMap.put("shop_rent", etDefaultRentAmount.getText().toString().trim());
+                roomsMap.put("room_name", String.format(Locale.US, "Shop %02d", i));
+                roomsMap.put("default_rent", etDefaultRentAmount.getText().toString().trim());
+                roomsMap.put("custom_rent", etDefaultRentAmount.getText().toString().trim());
                 roomsMap.put("user_id", userId);
                 roomsMap.put("property_id", pid);
                 roomsMap.put("is_room", String.valueOf(false));

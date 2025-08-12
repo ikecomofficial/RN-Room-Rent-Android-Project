@@ -13,13 +13,18 @@
         android:theme="@style/Theme.RNRoomRent"
         tools:targetApi="31">
         <activity
+            android:name=".PropertyDetailsActivity"
+            android:exported="false"
+            android:label="@string/text_property_details"/>
+        <activity
             android:name=".AddProperty"
             android:exported="false"
-            android:label="@string/text_add_property"/>
+            android:label="@string/text_add_property"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".LoginScreenActivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

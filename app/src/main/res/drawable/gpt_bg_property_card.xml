@@ -10,6 +10,6 @@
     <!-- Shiny stroke -->
     <stroke
         android:width="0.5dp"
-        android:color="#80B47F7C" /> <!-- 50% transparent light teal -->
+        android:color="@color/bg_orange" /> <!-- 50% transparent light teal -->
 
 </shape>
