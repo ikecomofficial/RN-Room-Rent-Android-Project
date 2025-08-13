@@ -32,17 +32,31 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/text_room_01"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
+                android:layout_centerVertical="true"
                 android:textColor="@color/grey_500" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/tvRoomName"
+                android:text="Vacant"
+                android:layout_marginStart="16dp"
+                android:layout_centerVertical="true"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:background="@drawable/gpt_bg_chip"
+                android:textColor="@color/grey_700"/>
             <TextView
                 android:id="@+id/tvRupeeSymbol"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/text_rupee_symbol"
-                android:textSize="22sp"
-                android:textStyle="bold"
+                android:textSize="21sp"
+                android:layout_centerVertical="true"
                 android:layout_marginEnd="3dp"
+                android:layout_marginTop="2dp"
                 android:layout_toStartOf="@id/tvRoomRent"
                 android:textColor="@color/black" />
 
@@ -53,74 +67,42 @@
                 android:layout_height="wrap_content"
                 android:text="@string/text_rent_2500"
                 android:textSize="22sp"
+                android:layout_centerVertical="true"
                 android:layout_alignParentEnd="true"
                 android:textColor="@color/black"
-                android:textStyle="bold"
                 tools:ignore="RelativeOverlap" />
 
         </RelativeLayout>
 
-        <!-- Image + Tenant + Phone + Rent Status -->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingEnd="8dp"
-            android:paddingStart="8dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="5dp">
+            android:layout_marginTop="6dp">
 
-                <!-- Avatar -->
-                <ImageView
-                    android:id="@+id/imgTenantProfile"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_google_logo"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true"
-                    android:scaleType="centerCrop"
-                    android:contentDescription="Tenant Profile Image"/>
-
-                <!-- Name -->
-                <TextView
-                    android:id="@+id/tvTenantName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/text_tenant_name"
-                    android:textSize="22sp"
-                    android:textStyle="bold"
-                    android:layout_toEndOf="@id/imgTenantProfile"
-                    android:layout_marginStart="16dp"
-                    android:textColor="@color/black" />
-
-                <!-- Subtitle -->
-
-            <!-- Status -->
+            <!-- Name -->
             <TextView
-                android:id="@+id/tvTenantPhone"
+                android:id="@+id/tvTenantName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tvTenantName"
-                android:layout_alignStart="@id/tvTenantName"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="1dp"
-                android:text="@string/text_tenant_phone"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
+                android:text="@string/text_tenant_name"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_centerVertical="true"
+                android:textColor="@color/black" />
 
+            <!-- Paid/Unpaid Status -->
             <TextView
-                    android:id="@+id/tvRentStatus"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/text_status_paid"
-                    android:textSize="14sp"
-                    android:textColor="@android:color/white"
-                    android:backgroundTint="#4CAF50"
-                    android:background="@drawable/gpt_bg_status_pill"
-                    android:paddingHorizontal="12dp"
-                    android:paddingVertical="4dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    tools:ignore="RelativeOverlap" />
+                android:id="@+id/tvRentStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_status_paid"
+                android:textSize="14sp"
+                android:textColor="#4CAF50"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                tools:ignore="RelativeOverlap" />
 
         </RelativeLayout>
 
@@ -128,10 +110,8 @@
             android:id="@+id/viewSeparatorLine"
             android:layout_width="match_parent"
             android:layout_height="0.2dp"
-            android:background="@color/purple_700"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginTop="12dp"
+            android:background="@color/light_separator"
+            android:layout_marginTop="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/headerContainer"/>
@@ -139,8 +119,8 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="12dp"
-            android:paddingBottom="12dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
             android:paddingStart="16dp"
             android:paddingEnd="8dp">
 

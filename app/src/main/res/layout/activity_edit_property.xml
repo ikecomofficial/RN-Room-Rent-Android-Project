@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditProperty">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        tools:ignore="ScrollViewCount">
+
+        <!-- The CardView from the previous design is now a child of the ConstraintLayout. -->
+        <!-- Constraints are added to center the CardView horizontally and vertically. -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="8dp"
+            android:id="@+id/cardPropertyName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- A LinearLayout is used to stack the heading and the input field vertically. -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_edit_text_layout"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_property_name"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:id="@+id/propertyNameLabel"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp"/>
+
+                    <ImageView
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:src="@drawable/ic_asterisk_star_mandatory"
+                        app:tint="@color/red"
+                        android:paddingTop="5dp"
+                        android:paddingStart="2dp"
+                        app:layout_constraintStart_toEndOf="@id/propertyNameLabel"/>
+
+                </LinearLayout>
+                <!-- This TextView serves as the text heading. -->
+
+                <!-- This EditText is the text input field. -->
+                <EditText
+                    android:id="@+id/etUpdatePropertyName"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_edittext_rounded"
+                    android:hint="@string/text_enter_name"
+                    android:padding="12dp"
+                    android:textSize="16sp"
+                    android:textColor="#0F172A"
+                    android:textColorHint="#94A3B8"
+                    android:inputType="textCapWords" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- The CardView from the previous design is now a child of the ConstraintLayout. -->
+        <!-- Constraints are added to center the CardView horizontally and vertically. -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="8dp"
+            android:id="@+id/cardAddressCity"
+            app:layout_constraintTop_toBottomOf="@+id/cardPropertyName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- A LinearLayout is used to stack the heading and the input field vertically. -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="@drawable/bg_edit_text_layout">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!-- This TextView serves as the text heading. -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_address_city"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp"/>
+
+                    <ImageView
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:src="@drawable/ic_asterisk_star_mandatory"
+                        app:tint="@color/red"
+                        android:paddingTop="5dp"
+                        android:paddingStart="2dp"
+                        app:layout_constraintStart_toEndOf="@id/propertyNameLabel"/>
+
+                </LinearLayout>
+
+
+
+                <!-- This EditText is the text input field. -->
+                <EditText
+                    android:id="@+id/etUpdatePropertyAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_edittext_rounded"
+                    android:hint="@string/text_property_location"
+                    android:padding="12dp"
+                    android:textSize="16sp"
+                    android:textColor="#0F172A"
+                    android:textColorHint="#94A3B8"
+                    android:inputType="textCapWords" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- The CardView from the previous design is now a child of the ConstraintLayout. -->
+        <!-- Constraints are added to center the CardView horizontally and vertically. -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="8dp"
+            android:id="@+id/cardDefaultRent"
+            app:layout_constraintTop_toBottomOf="@+id/cardAddressCity"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- A LinearLayout is used to stack the heading and the input field vertically. -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="@drawable/bg_edit_text_layout">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!-- This TextView serves as the text heading. -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_default_rent"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:id="@+id/rentdemo"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp"/>
+
+                    <ImageView
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:src="@drawable/ic_asterisk_star_mandatory"
+                        app:tint="@color/red"
+                        android:paddingTop="5dp"
+                        android:paddingStart="2dp"
+                        app:layout_constraintStart_toEndOf="@id/propertyNameLabel"/>
+
+                </LinearLayout>
+
+                <!-- This EditText is the text input field. -->
+                <EditText
+                    android:id="@+id/etUpdateDefaultRent"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_edittext_rounded"
+                    android:hint="@string/text_rent_amount"
+                    android:padding="12dp"
+                    android:textSize="16sp"
+                    android:textColor="#0F172A"
+                    android:textColorHint="#94A3B8"
+                    android:inputType="number" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btnCreateProperty"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_margin="10dp"
+            android:text="@string/text_update_property"
+            android:textSize="16sp"
+            android:backgroundTint="@color/purple_700"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardDefaultRent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -3,17 +3,17 @@ package com.example.rnroomrent;
 public class Properties {
     public String property_name;
     public String property_address;
-    public String total_rooms;
-    public String total_shops;
-    public String rooms_occupied;
-    public String shops_occupied;
+    public int total_rooms;
+    public int total_shops;
+    public int rooms_occupied;
+    public int shops_occupied;
 
     public Properties(){
 
     }
 
-    public Properties(String pname, String paddress, String totalRooms,
-                       String totalShops, String occupiedRooms, String occupiedShops) {
+    public Properties(String pname, String paddress, int totalRooms,
+                       int totalShops, int occupiedRooms, int occupiedShops) {
         this.property_name = pname;
         this.property_address = paddress;
         this.total_rooms = totalRooms;
@@ -38,35 +38,35 @@ public class Properties {
         this.property_address = property_address;
     }
 
-    public String getTotal_rooms() {
+    public int getTotal_rooms() {
         return total_rooms;
     }
 
-    public void setTotal_rooms(String total_rooms) {
+    public void setTotal_rooms(int total_rooms) {
         this.total_rooms = total_rooms;
     }
 
-    public String getTotal_shops() {
+    public int getTotal_shops() {
         return total_shops;
     }
 
-    public void setTotal_shops(String total_shops) {
+    public void setTotal_shops(int total_shops) {
         this.total_shops = total_shops;
     }
 
-    public String getRooms_occupied() {
+    public int getRooms_occupied() {
         return rooms_occupied;
     }
 
-    public void setRooms_occupied(String rooms_occupied) {
+    public void setRooms_occupied(int rooms_occupied) {
         this.rooms_occupied = rooms_occupied;
     }
 
-    public String getShops_occupied() {
+    public int getShops_occupied() {
         return shops_occupied;
     }
 
-    public void setShops_occupied(String shops_occupied) {
+    public void setShops_occupied(int shops_occupied) {
         this.shops_occupied = shops_occupied;
     }
 }

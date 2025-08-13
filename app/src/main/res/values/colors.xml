@@ -18,6 +18,7 @@
     <color name="acc_setting_labels">#505050</color>
     <color name="grey_500">#4d4d4d</color>
     <color name="grey_700">#333333</color>
+    <color name="light_separator">#D5D5D5</color>
 
     <!-- <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>

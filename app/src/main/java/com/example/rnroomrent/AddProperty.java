@@ -150,15 +150,15 @@ public class AddProperty extends AppCompatActivity {
         // Create unique property ID
         pid = propertyReference.push().getKey();
 
-        HashMap<String, String> propertyMap = new HashMap<>();
+        HashMap<String, Object> propertyMap = new HashMap<>();
         propertyMap.put("property_name", propertyName);
         propertyMap.put("property_address", propertyAddress);
-        propertyMap.put("property_default_rent", propertyDefaultRent);
+        propertyMap.put("property_default_rent", Integer.parseInt(propertyDefaultRent));
         propertyMap.put("user_id", userId);
-        propertyMap.put("total_rooms", String.valueOf(currTotalRooms));
-        propertyMap.put("total_shops", String.valueOf(currTotalShops));
-        propertyMap.put("rooms_occupied", "0");
-        propertyMap.put("shops_occupied", "0");
+        propertyMap.put("total_rooms", Integer.parseInt(String.valueOf(currTotalRooms)));
+        propertyMap.put("total_shops", Integer.parseInt(String.valueOf(currTotalShops)));
+        propertyMap.put("rooms_occupied", 0);
+        propertyMap.put("shops_occupied", 0);
         propertyMap.put("property_created_on", currTimestamp);
 
         if (pid != null){
@@ -178,16 +178,17 @@ public class AddProperty extends AppCompatActivity {
         for (int i = 1; i<= currTotalRooms; i++){
             String room_id = roomsReference.push().getKey();
             if (room_id != null){
-                HashMap<String, String> roomsMap = new HashMap<>();
-                roomsMap.put("room_no", String.valueOf(i));
+                HashMap<String, Object> roomsMap = new HashMap<>();
+                roomsMap.put("room_no", i);
                 roomsMap.put("room_name", String.format(Locale.US, "Room %02d", i));
-                roomsMap.put("default_rent", etDefaultRentAmount.getText().toString().trim());
-                roomsMap.put("custom_rent", etDefaultRentAmount.getText().toString().trim());
+                roomsMap.put("default_rent", Integer.parseInt(etDefaultRentAmount.getText().toString().trim()));
+                roomsMap.put("custom_rent", Integer.parseInt(etDefaultRentAmount.getText().toString().trim()));
                 roomsMap.put("user_id", userId);
                 roomsMap.put("property_id", pid);
-                roomsMap.put("is_room", String.valueOf(true));
-                roomsMap.put("is_occupied", String.valueOf(false));
-                roomsMap.put("property_created_on", currTimestamp);
+                roomsMap.put("is_room", true);
+                roomsMap.put("is_occupied", false);
+                roomsMap.put("created_on", currTimestamp);
+                roomsMap.put("is_rent_custom", false);
 
                 roomsReference.child(room_id).setValue(roomsMap)
                         .addOnSuccessListener(aVoid -> {
@@ -199,16 +200,17 @@ public class AddProperty extends AppCompatActivity {
         for (int i = 1; i<= currTotalShops; i++){
             String room_id = roomsReference.push().getKey();
             if (room_id != null){
-                HashMap<String, String> roomsMap = new HashMap<>();
-                roomsMap.put("room_no", String.valueOf(currTotalRooms + i));
+                HashMap<String, Object> roomsMap = new HashMap<>();
+                roomsMap.put("room_no", currTotalRooms + i);
                 roomsMap.put("room_name", String.format(Locale.US, "Shop %02d", i));
-                roomsMap.put("default_rent", etDefaultRentAmount.getText().toString().trim());
-                roomsMap.put("custom_rent", etDefaultRentAmount.getText().toString().trim());
+                roomsMap.put("default_rent", Integer.parseInt(etDefaultRentAmount.getText().toString().trim()));
+                roomsMap.put("custom_rent", Integer.parseInt(etDefaultRentAmount.getText().toString().trim()));
                 roomsMap.put("user_id", userId);
                 roomsMap.put("property_id", pid);
-                roomsMap.put("is_room", String.valueOf(false));
-                roomsMap.put("is_occupied", String.valueOf(false));
-                roomsMap.put("property_created_on", currTimestamp);
+                roomsMap.put("is_room", false);
+                roomsMap.put("is_occupied", false);
+                roomsMap.put("created_on", currTimestamp);
+                roomsMap.put("is_rent_custom", false);
 
                 roomsReference.child(room_id).setValue(roomsMap)
                         .addOnSuccessListener(aVoid -> {

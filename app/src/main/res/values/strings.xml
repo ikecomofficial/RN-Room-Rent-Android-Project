@@ -44,5 +44,8 @@
     <string name="text_tenant_phone">+91 9149880950</string>
     <string name="text_status_paid">Paid</string>
     <string name="text_electricity_bill">Electricity Bill</string>
+    <string name="text_edit_property">Edit Property</string>
+    <string name="text_delete_property">Delete Property</string>
+    <string name="text_update_property">Update Property</string>
 
 </resources>

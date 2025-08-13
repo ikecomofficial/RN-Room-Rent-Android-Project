@@ -1,6 +1,9 @@
 package com.example.rnroomrent;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -24,6 +27,9 @@ import java.util.List;
 public class PropertyDetailsActivity extends AppCompatActivity {
 
     private TextView tvPropertyName, tvPropertyAddress;
+
+    private String property_name, property_address;
+    private long property_default_rent;
 
     private String property_id;
     private String room_id;
@@ -78,8 +84,9 @@ public class PropertyDetailsActivity extends AppCompatActivity {
         propertyDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String property_name = snapshot.child("property_name").getValue().toString();
-                String property_address = snapshot.child("property_address").getValue().toString();
+                property_name = snapshot.child("property_name").getValue().toString();
+                property_address = snapshot.child("property_address").getValue().toString();
+                property_default_rent = snapshot.child("property_default_rent").getValue(Long.class);
 
                 tvPropertyName.setText(property_name);
                 tvPropertyAddress.setText(property_address);
@@ -106,11 +113,10 @@ public class PropertyDetailsActivity extends AppCompatActivity {
                                     model.room_id = room_id;
 
                                     model.setRoom_name(roomSnap.child("room_name").getValue(String.class));
-                                    model.setCustom_rent(roomSnap.child("custom_rent").getValue(String.class));
+                                    model.setCustom_rent(roomSnap.child("custom_rent").getValue(Integer.class));
 
                                     // Tenant defaults
                                     model.setTenant_name("No Tenant");
-                                    model.setTenant_phone("Click & Add Tenant from Menu");
 
                                     // Rent defaults
                                     model.setRent_status("N/A");
@@ -138,7 +144,6 @@ public class PropertyDetailsActivity extends AppCompatActivity {
                         if (snapshot.exists()) {
                             for (DataSnapshot tenantSnap : snapshot.getChildren()) {
                                 model.setTenant_name(tenantSnap.child("tenant_name").getValue(String.class));
-                                model.setTenant_phone(tenantSnap.child("tenant_phone").getValue(String.class));
                                 break; // Only one active tenant expected
                             }
                         }
@@ -211,5 +216,33 @@ public class PropertyDetailsActivity extends AppCompatActivity {
         super.onBackPressed();
         finish();
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.property_details_activity_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.action_edit_property) {
+            Intent editPropertyIntent = new Intent(PropertyDetailsActivity.this, EditProperty.class);
+            editPropertyIntent.putExtra("property_id", property_id);
+            editPropertyIntent.putExtra("property_name", property_name);
+            editPropertyIntent.putExtra("property_address", property_address);
+            editPropertyIntent.putExtra("default_rent", property_default_rent);
+            startActivity(editPropertyIntent);
+            // Open Edit Property screen
+            return true;
+        }
+        else if (id == R.id.action_delete_property) {
+            // Confirm and delete property
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
 
 }

@@ -33,10 +33,8 @@ public class RoomCardAdapter extends RecyclerView.Adapter<RoomCardAdapter.RoomVi
         RoomCardModel room = roomList.get(position);
 
         holder.tvRoomName.setText(room.getRoom_name());
-        holder.tvRentAmount.setText(room.getCustom_rent());
-
+        holder.tvRentAmount.setText(String.valueOf(room.getCustom_rent()));
         holder.tvTenantName.setText(room.getTenant_name());
-        holder.tvTenantPhone.setText(room.getTenant_phone());
         holder.tvRentStatus.setText(room.getRent_status());
         holder.tvUnitPaid.setText(room.getUnit_paid_up_to());
     }
@@ -48,7 +46,7 @@ public class RoomCardAdapter extends RecyclerView.Adapter<RoomCardAdapter.RoomVi
 
     static class RoomViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tvRoomName, tvRentAmount, tvTenantName, tvTenantPhone, tvRentStatus, tvUnitPaid;
+        TextView tvRoomName, tvRentAmount, tvTenantName, tvRentStatus, tvUnitPaid;
 
         public RoomViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -56,7 +54,6 @@ public class RoomCardAdapter extends RecyclerView.Adapter<RoomCardAdapter.RoomVi
             tvRoomName = itemView.findViewById(R.id.tvRoomName);
             tvRentAmount = itemView.findViewById(R.id.tvRoomRent);
             tvTenantName = itemView.findViewById(R.id.tvTenantName);
-            tvTenantPhone = itemView.findViewById(R.id.tvTenantPhone);
             tvRentStatus = itemView.findViewById(R.id.tvRentStatus);
             tvUnitPaid = itemView.findViewById(R.id.tvUnitPaid);
         }

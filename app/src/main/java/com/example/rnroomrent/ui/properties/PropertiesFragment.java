@@ -139,23 +139,23 @@ public class PropertiesFragment extends Fragment {
             propertyNameView.setText(propertyAddress);
         }
 
-        public void setOccupiedRooms(String occupiedRooms){
+        public void setOccupiedRooms(int occupiedRooms){
             TextView propertyNameView = mView.findViewById(R.id.tvOccupiedRooms);
-            propertyNameView.setText(occupiedRooms);
+            propertyNameView.setText(String.valueOf(occupiedRooms));
         }
 
-        public void setTotalRooms(String totalRooms){
+        public void setTotalRooms(int totalRooms){
             TextView propertyNameView = mView.findViewById(R.id.tvTotalRooms);
-            propertyNameView.setText(totalRooms);
+            propertyNameView.setText(String.valueOf(totalRooms));
         }
 
-        public void setOccupiedShops(String occupiedShops){
+        public void setOccupiedShops(int occupiedShops){
             TextView propertyNameView = mView.findViewById(R.id.tvOccupiedShops);
-            propertyNameView.setText(occupiedShops);
+            propertyNameView.setText(String.valueOf(occupiedShops));
         }
-        public void setTotalShops(String totalShops){
+        public void setTotalShops(int totalShops){
             TextView propertyNameView = mView.findViewById(R.id.tvTotalShops);
-            propertyNameView.setText(totalShops);
+            propertyNameView.setText(String.valueOf(totalShops));
         }
     }
 }

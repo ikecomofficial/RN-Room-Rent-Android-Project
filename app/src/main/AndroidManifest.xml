@@ -13,9 +13,12 @@
         android:theme="@style/Theme.RNRoomRent"
         tools:targetApi="31">
         <activity
+            android:name=".EditProperty"
+            android:exported="false" />
+        <activity
             android:name=".PropertyDetailsActivity"
             android:exported="false"
-            android:label="@string/text_property_details"/>
+            android:label="@string/text_property_details" />
         <activity
             android:name=".AddProperty"
             android:exported="false"
