@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -229,6 +230,7 @@ public class PropertyDetailsActivity extends AppCompatActivity {
         if (id == R.id.action_edit_property) {
             Intent editPropertyIntent = new Intent(PropertyDetailsActivity.this, EditProperty.class);
             editPropertyIntent.putExtra("property_id", property_id);
+            //Toast.makeText(this, property_id, Toast.LENGTH_LONG).show();
             editPropertyIntent.putExtra("property_name", property_name);
             editPropertyIntent.putExtra("property_address", property_address);
             editPropertyIntent.putExtra("default_rent", property_default_rent);

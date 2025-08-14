@@ -164,7 +164,7 @@ public class AddProperty extends AppCompatActivity {
         if (pid != null){
             propertyReference.child(pid).setValue(propertyMap)
                     .addOnSuccessListener(aVoid -> {
-                        Toast.makeText(this, "Property added successfully", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Property Added Successfully", Toast.LENGTH_SHORT).show();
                         finish();
                     })
                     .addOnFailureListener(e ->

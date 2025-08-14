@@ -207,7 +207,7 @@
         </androidx.cardview.widget.CardView>
 
         <Button
-            android:id="@+id/btnCreateProperty"
+            android:id="@+id/btnUpdateProperty"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_margin="10dp"
